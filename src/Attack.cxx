@@ -22,7 +22,6 @@
  * 174 W. 18th Ave.
  * Columbus, OH  43210
  */
-#if !defined(__MACH__) && !defined(__APPLE__)     
 #include <GL/glut.h>
 #include <string.h>
 #include <ctype.h>
@@ -183,4 +182,3 @@ void setupLocalDataDirectory (   )
     exit(1);
   }
 }
-#endif

@@ -25,7 +25,7 @@
  * Handles all the prettyness; or uglyness, as it now stands.
  */
 
-#include <string.h>
+#include <string>
 #include <ctype.h>
 #if defined(__MACH__) && defined(__APPLE__)
 #include <GLUT/glut.h>

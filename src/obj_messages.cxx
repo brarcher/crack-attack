@@ -34,7 +34,7 @@
 #include <math.h>
 
 #ifndef _WIN32
-#  include <strstream.h>
+#  include <strstream>
 #else
 #  include <glext.h>
 #  include <strstrea.h>

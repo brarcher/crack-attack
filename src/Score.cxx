@@ -26,12 +26,14 @@
  */
 
 #include <string.h>
-#include <fstream.h>
+#include <fstream>
 
 #include "Game.h"
 #include "MetaState.h"
 #include "TextureLoader.h"
 #include "Score.h"
+
+using namespace std;
 
 int Score::score;
 int Score::backlog;

@@ -1,6 +1,6 @@
 #ifndef COMMUNICATOR_H
 #define COMMUNICATOR_H
-
+using namespace std;
 #include <sys/types.h>
 
 #ifndef _WIN32
@@ -12,7 +12,7 @@
 #endif
 
 #include "Game.h"
-#include <iostream.h>
+#include <iostream>
 
 // default communication port
 #define CO_DEFAULT_PORT                          (8080)

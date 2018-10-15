@@ -30,9 +30,9 @@
 #else
 #include <GL/glut.h>
 #endif
-#include <fstream.h>
-#include <iostream.h>
-#include <string.h>
+#include <fstream>
+#include <iostream>
+#include <string>
 #include <sys/stat.h>
 
 #ifndef _WIN32
@@ -43,6 +43,8 @@
 
 #include "Game.h"
 #include "TextureLoader.h"
+
+using namespace std;
 
 // the header of an uncompressed TGA file
 const GLubyte header_image[11] = { 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0 };

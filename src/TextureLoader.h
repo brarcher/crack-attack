@@ -8,13 +8,13 @@
 #endif
 
 #ifndef _WIN32
-#  include <strstream.h>
+#  include <strstream>
 #else
 #  include <glext.h>
 #  include <strstrea.h>
 #endif
 
-#include <iostream.h>
+#include <iostream>
 
 #define TL_GARBAGE_TEXTURE_TGA_ID     "Crack Attack! garbage texture"
 #define TL_SCREEN_SHOT_TGA_ID         "Crack Attack! screen shot"
@@ -37,11 +37,11 @@ public:
 
   static inline void buildLocalDataDirectoryName ( char dir_name[256] )
   {
-    ostrstream s(dir_name, 256);
+    std::ostrstream s(dir_name, 256);
 #ifndef _WIN32
-    s << getenv("HOME") << GC_LOCAL_DATA_DIRECTORY << ends;
+    s << getenv("HOME") << GC_LOCAL_DATA_DIRECTORY << std::ends;
 #else
-    s << GC_LOCAL_DATA_DIRECTORY << ends;
+    s << GC_LOCAL_DATA_DIRECTORY << std::ends;
 #endif
     s.str();
   }
@@ -49,11 +49,11 @@ public:
   static inline void buildLocalDataFileName ( const char base_name[256],
    char file_name[256] )
   {
-    ostrstream s(file_name, 256);
+    std::ostrstream s(file_name, 256);
 #ifndef _WIN32
-    s << getenv("HOME") << GC_LOCAL_DATA_DIRECTORY << base_name << ends;
+    s << getenv("HOME") << GC_LOCAL_DATA_DIRECTORY << base_name << std::ends;
 #else
-    s << GC_LOCAL_DATA_DIRECTORY << base_name << ends;
+    s << GC_LOCAL_DATA_DIRECTORY << base_name << std::ends;
 #endif
     s.str();
   }

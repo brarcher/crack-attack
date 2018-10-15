@@ -27,7 +27,7 @@
 
 #include "GraphicsInclude.h"
 
-#include <iostream.h>
+#include <iostream>
 #include "Game.h"
 #include "Displayer.h"
 #include "TextureLoader.h"

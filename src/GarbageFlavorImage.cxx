@@ -25,10 +25,10 @@
  * Handles the the garbage flavor image.
  */
 
-#include <iomanip.h>
+#include <iomanip>
 
 #ifndef _WIN32
-#  include <strstream.h>
+#  include <strstream>
 #else
 #  include <strstrea.h>
 #endif
@@ -38,6 +38,8 @@
 #include "GarbageFlavorImage.h"
 #include "TextureLoader.h"
 #include "Random.h"
+
+using namespace std;
 
 int GarbageFlavorImage::current_texture;
 int GarbageFlavorImage::associated_garbage_id;

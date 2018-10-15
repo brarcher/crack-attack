@@ -27,7 +27,7 @@
  */
 
 #include <assert.h>
-#include <iostream.h>
+#include <iostream>
 #include <sys/types.h>
 #include <string.h>
 

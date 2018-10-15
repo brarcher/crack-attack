@@ -25,7 +25,7 @@
  * Displays and sends garbage to the opponent.
  */
 
-#include <iostream.h>
+#include <iostream>
 
 #include "Game.h"
 #include "GarbageGenerator.h"

@@ -65,7 +65,7 @@ VERSION = @VERSION@
 
 bin_PROGRAMS = crack-attack
 
-crack_attack_SOURCES = Attack.cxx Block.cxx BlockManager.cxx CelebrationManager.cxx Clock.cxx ComboManager.cxx ComboTabulator.cxx Communicator.cxx Controller.cxx CountDownManager.cxx Creep.cxx Displayer.cxx Game.cxx Garbage.cxx GarbageFlavorImage.cxx GarbageGenerator.cxx GarbageManager.cxx Grid.cxx LevelLights.cxx LightManager.cxx LoseBar.cxx MessageManager.cxx MetaState.cxx Random.cxx Sine.cxx Score.cxx ScoreRecordManager.cxx Swapper.cxx SparkleManager.cxx Spring.cxx SignManager.cxx String.cxx TextureLoader.cxx WinRecord.cxx X.cxx DrawBlocks.cxx DrawGarbage.cxx DrawCandy.cxx DrawScoreRecord.cxx DrawSwapper.cxx DrawExternalCandy.cxx DrawLevelLights.cxx DrawCountDown.cxx DrawMessages.cxx DrawWinRecord.cxx obj_block.cxx obj_garbage.cxx obj_garbage_thin_middle.cxx obj_garbage_thin_cap.cxx obj_garbage_thick_corner.cxx obj_garbage_thick_edge.cxx obj_garbage_thick_middle.cxx obj_garbage_small.cxx obj_sparkle.cxx obj_sign.cxx obj_swapper.cxx obj_external_candy.cxx obj_level_lights.cxx obj_messages.cxx obj_clock.cxx obj_name.cxx obj_score_record.cxx Attack.h Block.h BlockManager.h CelebrationManager.h Clock.h ComboManager.h ComboTabulator.h Communicator.h Controller.h CountDownManager.h Creep.h Displayer.h Game.h Garbage.h GarbageFlavorImage.h GarbageGenerator.h GarbageManager.h Grid.h LevelLights.h LightManager.h LoseBar.h MessageManager.h MetaState.h Random.h Sine.h Score.h ScoreRecordManager.h Swapper.h SparkleManager.h Spring.h SignManager.h String.h TextureLoader.h WinRecord.h X.h
+crack_attack_SOURCES = Attack.cxx Block.cxx BlockManager.cxx CelebrationManager.cxx Clock.cxx ComboManager.cxx ComboTabulator.cxx Communicator.cxx Controller.cxx CountDownManager.cxx Creep.cxx Displayer.cxx Game.cxx Garbage.cxx GarbageFlavorImage.cxx GarbageGenerator.cxx GarbageManager.cxx Grid.cxx LevelLights.cxx LightManager.cxx LoseBar.cxx MessageManager.cxx MetaState.cxx Random.cxx Sine.cxx Score.cxx ScoreRecordManager.cxx Swapper.cxx SparkleManager.cxx Spring.cxx SignManager.cxx CAString.cxx TextureLoader.cxx WinRecord.cxx X.cxx DrawBlocks.cxx DrawGarbage.cxx DrawCandy.cxx DrawScoreRecord.cxx DrawSwapper.cxx DrawExternalCandy.cxx DrawLevelLights.cxx DrawCountDown.cxx DrawMessages.cxx DrawWinRecord.cxx obj_block.cxx obj_garbage.cxx obj_garbage_thin_middle.cxx obj_garbage_thin_cap.cxx obj_garbage_thick_corner.cxx obj_garbage_thick_edge.cxx obj_garbage_thick_middle.cxx obj_garbage_small.cxx obj_sparkle.cxx obj_sign.cxx obj_swapper.cxx obj_external_candy.cxx obj_level_lights.cxx obj_messages.cxx obj_clock.cxx obj_name.cxx obj_score_record.cxx Attack.h Block.h BlockManager.h CelebrationManager.h Clock.h ComboManager.h ComboTabulator.h Communicator.h Controller.h CountDownManager.h Creep.h Displayer.h Game.h Garbage.h GarbageFlavorImage.h GarbageGenerator.h GarbageManager.h Grid.h LevelLights.h LightManager.h LoseBar.h MessageManager.h MetaState.h Random.h Sine.h Score.h ScoreRecordManager.h Swapper.h SparkleManager.h Spring.h SignManager.h CAString.h TextureLoader.h WinRecord.h X.h
 
 CXXFLAGS = -O6 -s
 INCLUDES = -DNDEBUG -DDATA_DIRECTORY='"${pkgdatadir}/"'
@@ -92,7 +92,7 @@ Game.o Garbage.o GarbageFlavorImage.o GarbageGenerator.o \
 GarbageManager.o Grid.o LevelLights.o LightManager.o LoseBar.o \
 MessageManager.o MetaState.o Random.o Sine.o Score.o \
 ScoreRecordManager.o Swapper.o SparkleManager.o Spring.o SignManager.o \
-String.o TextureLoader.o WinRecord.o X.o DrawBlocks.o DrawGarbage.o \
+CAString.o TextureLoader.o WinRecord.o X.o DrawBlocks.o DrawGarbage.o \
 DrawCandy.o DrawScoreRecord.o DrawSwapper.o DrawExternalCandy.o \
 DrawLevelLights.o DrawCountDown.o DrawMessages.o DrawWinRecord.o \
 obj_block.o obj_garbage.o obj_garbage_thin_middle.o \
@@ -124,7 +124,7 @@ OBJECTS = $(crack_attack_OBJECTS)
 all: all-redirect
 .SUFFIXES:
 .SUFFIXES: .S .c .cxx .o .s
-$(srcdir)/Makefile.in: Makefile.am $(top_srcdir)/configure.in $(ACLOCAL_M4) 
+$(srcdir)/Makefile.in: Makefile.am $(top_srcdir)/configure.ac $(ACLOCAL_M4) 
 	cd $(top_srcdir) && $(AUTOMAKE) --gnu --include-deps src/Makefile
 
 Makefile: $(srcdir)/Makefile.in  $(top_builddir)/config.status
@@ -147,7 +147,7 @@ $(srcdir)/config.h.in: $(srcdir)/stamp-h.in
 		rm -f $(srcdir)/stamp-h.in; \
 		$(MAKE) $(srcdir)/stamp-h.in; \
 	else :; fi
-$(srcdir)/stamp-h.in: $(top_srcdir)/configure.in $(ACLOCAL_M4) 
+$(srcdir)/stamp-h.in: $(top_srcdir)/configure.ac $(ACLOCAL_M4) 
 	cd $(top_srcdir) && $(AUTOHEADER)
 	@echo timestamp > $(srcdir)/stamp-h.in 2> /dev/null
 
@@ -297,7 +297,7 @@ Displayer.o: Displayer.cxx Game.h config.h Displayer.h Garbage.h \
 	CountDownManager.h Creep.h Spring.h WinRecord.h MetaState.h \
 	CelebrationManager.h GarbageFlavorImage.h Random.h \
 	SignManager.h LightManager.h SparkleManager.h X.h Block.h \
-	ComboTabulator.h TextureLoader.h String.h ScoreRecordManager.h \
+	ComboTabulator.h TextureLoader.h CAString.h ScoreRecordManager.h \
 	Score.h
 DrawBlocks.o: DrawBlocks.cxx Game.h config.h Displayer.h Garbage.h \
 	CountDownManager.h Creep.h Spring.h WinRecord.h MetaState.h \
@@ -415,10 +415,10 @@ obj_messages.o: obj_messages.cxx Game.h config.h Displayer.h Garbage.h \
 	TextureLoader.h MessageManager.h
 obj_name.o: obj_name.cxx Game.h config.h Displayer.h Garbage.h \
 	CountDownManager.h Creep.h Spring.h WinRecord.h MetaState.h \
-	String.h Communicator.h
+	CAString.h Communicator.h
 obj_score_record.o: obj_score_record.cxx Game.h config.h Displayer.h \
 	Garbage.h CountDownManager.h Creep.h Spring.h WinRecord.h \
-	MetaState.h String.h Score.h ComboTabulator.h
+	MetaState.h CAString.h Score.h ComboTabulator.h
 obj_sign.o: obj_sign.cxx Game.h config.h Displayer.h Garbage.h \
 	CountDownManager.h Creep.h Spring.h WinRecord.h MetaState.h \
 	TextureLoader.h
@@ -441,9 +441,9 @@ SparkleManager.o: SparkleManager.cxx Game.h config.h Displayer.h \
 	Garbage.h CountDownManager.h Creep.h Spring.h WinRecord.h \
 	MetaState.h Random.h SparkleManager.h
 Spring.o: Spring.cxx Game.h config.h Spring.h
-String.o: String.cxx Game.h config.h Displayer.h Garbage.h \
+CAString.o: CAString.cxx Game.h config.h Displayer.h Garbage.h \
 	CountDownManager.h Creep.h Spring.h WinRecord.h MetaState.h \
-	String.h TextureLoader.h
+	CAString.h TextureLoader.h
 Swapper.o: Swapper.cxx Game.h config.h Swapper.h BlockManager.h Block.h \
 	ComboTabulator.h Random.h MetaState.h X.h Garbage.h Grid.h \
 	GarbageManager.h GarbageFlavorImage.h Displayer.h \

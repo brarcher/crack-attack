@@ -31,18 +31,20 @@
 #include <math.h>
 
 #ifndef _WIN32
-#  include <strstream.h>
+#  include <strstream>
 #else
 #  include <glext.h>
 #  include <strstrea.h>
 #endif
 
 #include "Game.h"
-#include <iostream.h>
+#include <iostream>
 #include "Displayer.h"
 #include "MetaState.h"
 #include "CAString.h"
 #include "Score.h"
+
+using namespace std;
 
 GLuint Displayer::score_to_beat_texture;
 GLuint Displayer::record_textures[DC_SCORE_REC_NUMBER_DRAW];

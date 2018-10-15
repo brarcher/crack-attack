@@ -15,7 +15,7 @@
 #define GR_IMMUTABLE             (1 << 4)
 #define GR_SHATTERING            (1 << 5)
 #define GR_HANGING               (1 << 6)
-
+using namespace std;
 // pattern types
 #define PT_HORIZONTAL            (1 << 0)
 #define PT_VERTICAL              (1 << 1)
@@ -58,12 +58,12 @@ public:
         case GR_HANGING: cout << '+'; break;
         default: cout << '!'; break;
         }
-      cout << '\n';
+      std::cout << '\n';
     }
-    cout << endl;
+    std::cout << endl;
 
     for (int n = 0; n < GC_PLAY_WIDTH; n++)
-      cout << blockAt(n, 0).state << endl;
+      std::cout << blockAt(n, 0).state << std::endl;
   }
 
   static inline int stateAt ( int x, int y )
