@@ -1,0 +1,22 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {playAction = id; quitAction = id; }; 
+            CLASS = CAOptionController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                gameTypeRadios = NSMatrix; 
+                lowSwitch = NSButton; 
+                nameField = NSTextField; 
+                optionsWindow = NSWindow; 
+                portNumberField = NSTextField; 
+                serverNameField = NSTextField; 
+                waitSwitch = NSButton; 
+                xSwitch = NSButton; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }
+    ); 
+    IBVersion = 1; 
+}
